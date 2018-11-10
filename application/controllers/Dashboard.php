@@ -18,23 +18,27 @@ class Dashboard extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index(){
-		$this->load->view('dashboard/index');
-	}
-  
-  public function dog_form(){
-		$this->load->view('dashboard/dog-form');
-	}
-  
-  public function dog_list(){
-		$this->load->view('dashboard/dog-list');
-	}
-  
-  public function dog_info() {
-    $this->load->view('dashboard/dog-info');
-  }
-  
-  public function ajudantes(){
-		$this->load->view('dashboard/ajudantes');
-	}
+    public function index(){
+    $this->load->view('dashboard/index');
+    }
+
+    public function dog_form(){
+        $this->load->view('dashboard/dog-form');
+    }
+
+    public function dog_list(){
+        $this->load->view('dashboard/dog-list');
+    }
+
+    public function dog_info() {
+        $this->load->view('dashboard/dog-info');
+    }
+
+    public function ajudantes(){
+        $this->load->view('dashboard/ajudantes');
+    }
+    
+    public function parceiros(){
+        $this->load->view('dashboard/parceiros');
+    }
 }
