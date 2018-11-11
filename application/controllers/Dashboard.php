@@ -41,4 +41,8 @@ class Dashboard extends CI_Controller {
     public function parceiros(){
         $this->load->view('dashboard/parceiros');
     }
+    
+    public function parceiros_form(){
+        $this->load->view('dashboard/parceiros-form');
+    }
 }

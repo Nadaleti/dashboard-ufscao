@@ -29,6 +29,9 @@
     <link href="<?= base_url('vendor/select2/select2.min.css')?>" rel="stylesheet" media="all">
     <link href="<?= base_url('vendor/perfect-scrollbar/perfect-scrollbar.css')?>" rel="stylesheet" media="all">
     <link href="<?= base_url('vendor/vector-map/jqvmap.min.css')?>" rel="stylesheet" media="all">
+    
+    <!-- CROPPER -->
+    <link rel="stylesheet" href="<?=base_url('assets/css/cropper.css')?>">
 
     <!-- Main CSS-->
     <link href="<?= base_url('assets/css/theme.css')?>" rel="stylesheet" media="all">
@@ -59,7 +62,7 @@
                                 <i class="fas fa-tachometer-alt"></i>Resumo
                             </a>
                         </li>
-                        <li class="active has-sub">
+                        <li class="has-sub">
                             <a href="inbox.html">
                                 <i class="fas fa-user-friends"></i>Ajudantes
                             </a>
@@ -87,7 +90,7 @@
                                 <i class="fas fa-calendar"></i>Eventos
                             </a>
                         </li>
-                        <li class="has-sub">
+                        <li class="active has-sub">
                             <a href="inbox.html">
                                 <i class="fas fa-handshake"></i>Parceiros
                             </a>
@@ -181,7 +184,7 @@
                                 <i class="fas fa-tachometer-alt"></i>Resumo
                             </a>
                         </li>
-                        <li class="active has-sub">
+                        <li class="has-sub">
                             <a href="inbox.html">
                                 <i class="fas fa-user-friends"></i>Ajudantes
                             </a>
@@ -209,7 +212,7 @@
                                 <i class="fas fa-calendar"></i>Eventos
                             </a>
                         </li>
-                        <li class="has-sub">
+                        <li class="active has-sub">
                             <a href="inbox.html">
                                 <i class="fas fa-handshake"></i>Parceiros
                             </a>
@@ -221,155 +224,33 @@
             <!-- END HEADER DESKTOP-->
 
             <!-- CONTENT -->
-            <section class="mt-5">
-                <div class="col-md-12 d-flex justify-content-center mb-3 pt-lg-5 pt-xl-5" id="filters">
-                    <div class="dropdown mb-2">
-                        <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dropdownMenuButton">Filtros</button>
-                        <div class="dropdown-menu p-2 js-dropdown" aria-labelledby="dropdownMenuButton" style="margin-top: 7vh;">
-                            <div class="form-check">                        
-                                <input type="checkbox" class="form-check-input" id="check1" name="car" value="carona">
-                                <label class="form-check-label" for="check1">Carona</label>
+            <section class="mt-md-3 mt-lg-5 mt-xl-5 pt-lg-5 pt-xl-5">
+                <div class="container d-flex flex-wrap justify-content-center col-md-12">
+                    <!-- CHANGE PARCEIROS -->
+                    <div class="mt-3 col-md-12 d-flex flex-wrap justify-content-center">
+                        <label class="" data-toggle="tooltip" title="Insira uma nova imagem" style="cursor: pointer;">
+                            <img class="rounded-circle img-fluid mx-auto" id="photo" src="<?= base_url('assets/images/default.png')?>" width="250px" heigth="250px" alt="Parceiro x">
+                            <input type="file" class="sr-only" id="photo-input" name="image" accept="image/*">
+                        </label>
+                        <form class="mt-3 mx-5" action="" method="">
+                            <div class="form-group">
+                                <label>Nome do parceiro</label>
+                                <input type="text" class="form-control" placeholder="Insira o nome do parceiro">
                             </div>
-                            <div class="form-check">                        
-                                <input type="checkbox" class="form-check-input" id="check2" name="lar-tmp" value="lar">
-                                <label class="form-check-label" for="check2">Lar Temporário</label>
+                            <div class="form-group">
+                                <label>Link</label>
+                                <input type="text" class="form-control" placeholder="Insira um link">
                             </div>
-                            <div class="form-check">                        
-                                <input type="checkbox" class="form-check-input" id="check3" name="divulg" value="divulgacao">
-                                <label class="form-check-label" for="check3">Divulgação</label>
+
+                            <div class="d-flex justify-content-center mt-2">
+                                <button class="btn btn-secondary">Cancelar</button>
+                                <button class="btn btn-primary mr-2" type="submit">Cadastrar</button>
                             </div>
-                            <div class="form-check">                        
-                                <input type="checkbox" class="form-check-input" id="check4" name="doa" value="doacao">
-                                <label class="form-check-label" for="check4">Doação</label>
-                            </div>
-                            <div class="form-check">                        
-                                <input type="checkbox" class="form-check-input" id="check4" name="doa" value="doacao">
-                                <label class="form-check-label" for="check4">Outros</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-10 col-md-10 input-group">
-                        <input type="text" class="form-control" placeholder="Digite o nome de um ajudante">  
+                        </form>
                     </div>
                 </div>
-                <div class="col-md-12 mx-auto">
-                <!-- Table -->
-                <div class="container">
-                    <!-- Thead -->
-                    <div class="d-flex flex-row bg-primary py-3 rounded-top" id="thead">
-                        <div class="col-sm-6 col-md-4"><b>Nome</b></div>
-                        <div class="col-sm-5 col-md-7"><b>Contato</b></div>
-                    </div>
-                    <!-- Rows -->
-                    <div class="card mb-0 rounded-0" onclick="change(this);">
-                        <a class="d-flex flex-row justify-content-between py-3 card-header" data-toggle="collapse" href="#collapse-1" aria-expanded="false" aria-controls="collapse-1" style="color: black;">
-                            <div class="col-sm-6 col-md-4">Matheus Nadaleti Garcia</div>
-                            <div class="col-sm-5 col-md-7 contact">ufscao@adote.com.br</div>
-                            <div class="">
-                                <i class="fa fa-chevron-down"></i>
-                                <i class="fa fa-chevron-up" style="display: none;"></i>
-                            </div>
-                        </a>
-                        <div class="collapse fade" id="collapse-1">
-                            <div class="d-flex card-body">
-                                <div class="col-sm-12 contact mb-2" style="display: none;">
-                                    <h5 class="mb-1">Contato:</h5>
-                                    <p>ufscao@adote.com.br</p>
-                                </div>
-                                <div class="col-md-5 mb-2">
-                                    <h5 class="mb-1">Pode ajudar com:</h5>
-                                    <p>Carona, lar temporário, divulgação, doação</p>
-                                </div>
-                                <div class="col-md-7">
-                                    <h5 class="mb-1">Observações:</h5>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis quam scelerisque, gravida felis at, pretium enim.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card mb-0 rounded-0" onclick="change(this);">
-                        <a class="d-flex flex-row justify-content-between py-3 card-header" data-toggle="collapse" href="#collapse-2" aria-expanded="false" aria-controls="collapse-2" style="color: black;">
-                            <div class="col-sm-6 col-md-4">Vinicius de Souza Carvalho</div>
-                            <div class="col-sm-5 col-md-7 contact">(15)99999-9999</div>
-                            <div class="">
-                                <i class="fa fa-chevron-down"></i>
-                                <i class="fa fa-chevron-up" style="display: none;"></i>
-                            </div>
-                        </a>
-                        <div class="collapse fade" id="collapse-2">
-                            <div class="d-flex card-body">
-                                <div class="col-sm-12 contact mb-2" style="display: none;">
-                                    <h5 class="mb-1">Contato:</h5>
-                                    <p>(15)99999-9999</p>
-                                </div>
-                                <div class="col-md-5 mb-2">
-                                    <h5 class="mb-1">Pode ajudar com:</h5>
-                                    <p>Carona, lar temporário, divulgação, doação</p>
-                                </div>
-                                <div class="col-md-7">
-                                    <h5 class="mb-1">Observações:</h5>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis quam scelerisque, gravida felis at, pretium enim.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card mb-0 rounded-0" onclick="change(this);">
-                        <a class="d-flex flex-row justify-content-between py-3 card-header" data-toggle="collapse" href="#collapse-3" aria-expanded="false" aria-controls="collapse-3" style="color: black;">
-                            <div class="col-sm-6 col-md-4">Vinicius Furukawa Carvalho</div>
-                            <div class="col-sm-5 col-md-7 contact">(15)4444-4444</div>
-                            <div class="">
-                                <i class="fa fa-chevron-down"></i>
-                                <i class="fa fa-chevron-up" style="display: none;"></i>
-                            </div>
-                        </a>
-                        <div class="collapse fade" id="collapse-3">
-                            <div class="d-flex card-body">
-                                <div class="col-sm-12 contact mb-2" style="display: none;">
-                                    <h5 class="mb-1">Contato:</h5>
-                                    <p>(15)4444-4444</p>
-                                </div>
-                                <div class="col-md-5 mb-2">
-                                    <h5 class="mb-1">Pode ajudar com:</h5>
-                                    <p>Carona, lar temporário, divulgação, doação</p>
-                                </div>
-                                <div class="col-md-7">
-                                    <h5 class="mb-1">Observações:</h5>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis quam scelerisque, gravida felis at, pretium enim.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card mb-0 rounded-0" onclick="change(this);">
-                        <a class="d-flex flex-row justify-content-between py-3 card-header" data-toggle="collapse" href="#collapse-4" aria-expanded="false" aria-controls="collapse-4" style="color: black;">
-                            <div class="col-sm-6 col-md-4">Rafael Felipe Dias dos Santos</div>
-                            <div class="col-sm-5 col-md-7 contact">ufscao@adote.com.br</div>
-                            <div class="">
-                                <i class="fa fa-chevron-down"></i>
-                                <i class="fa fa-chevron-up" style="display: none;"></i>
-                            </div>
-                        </a>
-                        <div class="collapse fade" id="collapse-4">
-                            <div class="d-flex card-body">
-                                <div class="col-sm-12 contact mb-2" style="display: none;">
-                                    <h5 class="mb-1">Contato:</h5>
-                                    <p>ufscao@adote.com.br</p>
-                                </div>
-                                <div class="col-md-5 mb-2">
-                                    <h5 class="mb-1">Pode ajudar com:</h5>
-                                    <p>Carona, lar temporário, divulgação, doação</p>
-                                </div>
-                                <div class="col-md-7">
-                                    <h5 class="mb-1">Observações:</h5>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis quam scelerisque, gravida felis at, pretium enim.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> <!-- container -->
-            </div>
             </section>
-            <!-- END OF CONTENT -->
-
+            
             <section>
                 <div class="container-fluid">
                     <div class="row">
@@ -383,7 +264,33 @@
             </section>
             <!-- END PAGE CONTAINER-->
         </div>
-
+    </div>
+    
+    <!-- Modal to cropper -->
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header p-2 d-flex flex-row justify-content-between">
+                    <h5 class="modal-title" id="modalLabel">Corte a imagem</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="">
+                        <button class="btn btn-light" id="zoom-in"><i class="fas fa-search-plus"></i></button>
+                        <button class="btn btn-light" id="zoom-out"><i class="fas fa-search-minus"></i></button>
+                    </div>
+                    <div class="img-container">
+                    <img id="modal-img" src="">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="crop">Cortar</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Jquery JS-->
@@ -415,40 +322,9 @@
     <!-- Main JS-->
     <script src="<?= base_url('assets/js/main.js')?>"></script>
     
-       <script>
-            //Função de troca de ícone
-            function change(item){
-                $(item).find('i').toggle();
-            };
-            
-            //Função de arrumar card
-            $(window).ready(function(){
-                //Para dispositivos pequenos, configura organização de elementos
-                if ($(window).width() < 500) {
-                    $($("#thead > div")[1]).css("display", "none");
-                    $(".contact").toggle();
-                    $(".card .collapse .card-body").css("flex-direction", "column");
-                    $("#filters").css("flex-direction", "column");
-                }
-                
-                //Para dispositivos maiores, configura organização dos elementos de acordo com a redução da largura
-                $(window).resize(function() {
-                    if ($(window).width() < 500) {
-                        $($("#thead > div")[1]).css("display", "none");
-                        $(".card-header .contact").css("display", "none");
-                        $(".card-body .contact").css("display", "block");
-                        $(".card .collapse .card-body").css("flex-direction", "column");
-                        $("#filters").css("flex-direction", "column");
-                    } else {
-                        $($("#thead > div")[1]).css("display", "block");
-                        $(".card-header .contact").css("display", "block");
-                        $(".card-body .contact").css("display", "none");
-                        $(".card .collapse .card-body").css("flex-direction", "row");
-                        $("#filters").css("flex-direction", "row");
-                    }
-                });
-            });
-        </script>
+    <!-- SCRIPTS TO CROP -->
+    <script src="<?=base_url('assets/js/cropper.js')?>"></script>
+    <script src="<?=base_url('assets/js/img-cropper.js') ?>"></script>
 </body>
 
 </html>

@@ -234,8 +234,8 @@
                                     <a type="button" href="" class="btn btn-link p-1 ml-2" style="font-size: 12px; display: none;" id="edit">Editar</a>
                                 </div>
                                 <label class="" data-toggle="tooltip" title="Insira uma nova imagem" style="cursor: pointer;">
-                                    <img class="rounded img-fluid" id="photo" src="<?=base_url('assets/images/dog-head-profile.png')?>" width="200px" height="200px" style="background-color: #CCC;">
-                                    <input type="file" class="sr-only" id="photo-input" name="image" accept="image/*">
+                                    <img class="rounded-circle img-fluid" id="photo" src="<?=base_url('assets/images/dog-head-profile.png')?>" width="200px" height="200px" style="background-color: #CCC;">
+                                    <input type="file" class="sr-only" id="photo-input" value="0" name="image" accept="image/*">
                                 </label>
                             </div>
                             <div class="col-sm-12 col-md-8" id="infos">

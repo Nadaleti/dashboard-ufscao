@@ -29,6 +29,9 @@
     <link href="<?= base_url('vendor/select2/select2.min.css')?>" rel="stylesheet" media="all">
     <link href="<?= base_url('vendor/perfect-scrollbar/perfect-scrollbar.css')?>" rel="stylesheet" media="all">
     <link href="<?= base_url('vendor/vector-map/jqvmap.min.css')?>" rel="stylesheet" media="all">
+    
+    <!-- CROPPER -->
+    <link rel="stylesheet" href="<?=base_url('assets/css/cropper.css')?>">
 
     <!-- Main CSS-->
     <link href="<?= base_url('assets/css/theme.css')?>" rel="stylesheet" media="all">
@@ -222,30 +225,56 @@
 
             <!-- CONTENT -->
             <section class="mt-sm-3 mt-md-3 mt-lg-5 mt-xl-5 pt-lg-5 pt-xl-5">
-                 <div class="container d-flex flex-wrap justify-content-center col-md-12">
-                    <div class="col-xl-3 text-center">
-                        <img class="rounded-circle img-fluid mx-auto" src="<?= base_url('assets/images/dogs/dog-5.jpg')?>" alt="Parceiro x">
+                <div class="container d-flex flex-wrap justify-content-center col-md-12">
+                    <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 text-center mt-3" data-toggle="parc-1">
+                        <img class="rounded-circle img-fluid mx-auto" src="<?= base_url('assets/images/logo-petshop.png')?>" alt="Parceiro x">
                         <div class="mt-3">
                             <h4>Nome parceiro</h4>
-                            <button class="btn btn-link text-primary"><i class="fas fa-pencil-alt"></i></button>
-                            <button class="btn btn-link text-danger"><i class="fas fa-trash-alt"></i></button>
+                            <div class="d-flex justify-content-center">
+                                <button class="btn btn-link text-primary" value="parc-1" data-toggle="tooltip" data-placement="left" title="Editar"><i class="fas fa-pencil-alt"></i></button>
+                                <div data-toggle="tooltip" data-placement="right" title="Excluir"><button class="btn btn-link text-danger" data-toggle="modal" data-target="#modal"><i class="fas fa-trash-alt"></i></button></div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 text-center">
-                        <div class="" style="position: relative;">
-                            <button class="btn btn-link float-right"><i class="fa fa-times"></i></button>
-                            <img class="rounded-circle img-fluid mx-auto" src="<?= base_url('assets/images/dogs/dog-5.jpg')?>" alt="Parceiro x">
-                            <button class="btn btn-primary rounded-circle" style="position: absolute; bottom: 3vmin; right: 3vmin;"><i class="fas fa-exchange-alt"></i></button>
-                        </div>
-                        <form class="mt-3" action="" method="">
-                            <input type="text" class="form-control" placeholder="Insira o nome do parceiro" value="Nome parceiro">
-                            <input type="text" class="form-control mt-2" placeholder="Insira um link" value="site.com.br">
-                            <div class="container mt-2">
-                                <button class="btn btn-sm btn-primary" type="submit">Alterar</button>
-                                <button class="btn btn-link text-danger"><i class="fas fa-trash-alt"></i></button>
+                    <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 text-center mt-3" data-toggle="parc-1">
+                        <img class="rounded-circle img-fluid mx-auto" src="<?= base_url('assets/images/logo-petshop.png')?>" alt="Parceiro x">
+                        <div class="mt-3">
+                            <h4>Nome parceiro</h4>
+                            <div class="d-flex justify-content-center">
+                                <button class="btn btn-link text-primary" value="parc-1" data-toggle="tooltip" data-placement="left" title="Editar"><i class="fas fa-pencil-alt"></i></button>
+                                <div data-toggle="tooltip" data-placement="right" title="Excluir"><button class="btn btn-link text-danger" data-toggle="modal" data-target="#modal"><i class="fas fa-trash-alt"></i></button></div>
                             </div>
-                        </form>
-                        
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 text-center mt-3" data-toggle="parc-1">
+                        <img class="rounded-circle img-fluid mx-auto" src="<?= base_url('assets/images/logo-petshop.png')?>" alt="Parceiro x">
+                        <div class="mt-3">
+                            <h4>Nome parceiro</h4>
+                            <div class="d-flex justify-content-center">
+                                <button class="btn btn-link text-primary" value="parc-1" data-toggle="tooltip" data-placement="left" title="Editar"><i class="fas fa-pencil-alt"></i></button>
+                                <div data-toggle="tooltip" data-placement="right" title="Excluir"><button class="btn btn-link text-danger" data-toggle="modal" data-target="#modal"><i class="fas fa-trash-alt"></i></button></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 text-center mt-3" data-toggle="parc-1">
+                        <img class="rounded-circle img-fluid mx-auto" src="<?= base_url('assets/images/logo-petshop.png')?>" alt="Parceiro x">
+                        <div class="mt-3">
+                            <h4>Nome parceiro</h4>
+                            <div class="d-flex justify-content-center">
+                                <button class="btn btn-link text-primary" value="parc-1" data-toggle="tooltip" data-placement="left" title="Editar"><i class="fas fa-pencil-alt"></i></button>
+                                <div data-toggle="tooltip" data-placement="right" title="Excluir"><button class="btn btn-link text-danger" data-toggle="modal" data-target="#modal"><i class="fas fa-trash-alt"></i></button></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 text-center mt-3" data-toggle="parc-1">
+                        <img class="rounded-circle img-fluid mx-auto" src="<?= base_url('assets/images/logo-petshop.png')?>" alt="Parceiro x">
+                        <div class="mt-3">
+                            <h4>Nome parceiro</h4>
+                            <div class="d-flex justify-content-center">
+                                <button class="btn btn-link text-primary" value="parc-1" data-toggle="tooltip" data-placement="left" title="Editar"><i class="fas fa-pencil-alt"></i></button>
+                                <div data-toggle="tooltip" data-placement="right" title="Excluir"><button class="btn btn-link text-danger" data-toggle="modal" data-target="#modal"><i class="fas fa-trash-alt"></i></button></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -263,7 +292,27 @@
             </section>
             <!-- END PAGE CONTAINER-->
         </div>
-
+    </div>
+    
+    <!-- Modal to cropper -->
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header p-2 d-flex flex-row justify-content-between">
+                    <h5 class="modal-title" id="modalLabel">Deseja excluir este parceiro?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Esta é uma mudança irreversível. Deseja realmente excluir esse cadastro de parceiro?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-danger" id="crop">Excluir</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Jquery JS-->
@@ -294,6 +343,10 @@
 
     <!-- Main JS-->
     <script src="<?= base_url('assets/js/main.js')?>"></script>
+    
+    <script>
+        $('[data-toggle="tooltip"]').tooltip();
+    </script>
 </body>
 
 </html>
