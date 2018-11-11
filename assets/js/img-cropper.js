@@ -87,6 +87,7 @@ document.getElementById('crop').addEventListener('click', function () {
 //Edit cropped image
 document.getElementById('edit').addEventListener('click', function(e){
     e.preventDefault();
+    e.stopPropagation();
     done(new_url);
 });
 });
