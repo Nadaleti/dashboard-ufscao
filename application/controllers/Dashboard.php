@@ -38,6 +38,10 @@ class Dashboard extends CI_Controller {
         $this->load->view('dashboard/ajudantes');
     }
     
+    public function eventos() {
+        $this->load->view('dashboard/eventos');
+    }
+    
     public function parceiros(){
         $this->load->view('dashboard/parceiros');
     }
