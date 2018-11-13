@@ -48,9 +48,6 @@
             </div>
             <div class="menu-sidebar2__content js-scrollbar1">
                 <div class="account2">
-                    <div class="image img-cir img-120">
-                        <img src="<?= base_url('assets/images/icon/avatar-big-01.jpg')?>" alt="John Doe" />
-                    </div>
                     <h4 class="name">john doe</h4>
                     <a href="#">Sign out</a>
                 </div>
@@ -162,7 +159,7 @@
             </header>
             
             <!-- HIDDEN SIDEBAR - sidebar when small -->
-            <aside class="menu-sidebar2 js-right-sidebar d-block d-lg-none">
+            <aside class="menu-sidebar2 js-right-sidebar d-block d-lg-none" style="position:fixed;">
                 <div class="logo">
                     <a href="#">
                         <img src="<?= base_url('assets/images/icon/logo-white.png')?>" alt="Cool Admin" />
@@ -170,9 +167,6 @@
                 </div>
                 <div class="menu-sidebar2__content js-scrollbar2">
                     <div class="account2">
-                        <div class="image img-cir img-120">
-                            <img src="<?= base_url('assets/images/icon/avatar-big-01.jpg')?>" alt="John Doe" />
-                        </div>
                         <h4 class="name">john doe</h4>
                         <a href="#">Sign out</a>
                     </div>
@@ -276,7 +270,7 @@
                         </div>
                     </div>
 
-                    <a href="#" class="btn-lg btn-primary border-0 rounded-circle" style="position: fixed; bottom: 8vmin; right: 8vmin;" data-toggle="tooltip" data-placement="top" title="Novo cachorro">
+                    <a href="#" class="btn-lg btn-primary border-0 rounded-circle" style="position: fixed; bottom: 8vmin; right: 8vmin; z-index:1;" data-toggle="tooltip" data-placement="top" title="Novo cachorro">
                         <i class="fa fa-plus"></i>
                     </a>
                 </div>

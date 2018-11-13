@@ -33,6 +33,7 @@
     <!-- Main CSS-->
     <link href="<?= base_url('assets/css/theme.css')?>" rel="stylesheet" media="all">
     <link href="<?= base_url('assets/css/my_style.css')?>" rel="stylesheet">
+    <link rel="stylesheet" media="screen and (max-width: 499px)" href="<?= base_url('assets/css/small.css')?>"/>
     
 </head>
 
@@ -47,9 +48,6 @@
             </div>
             <div class="menu-sidebar2__content js-scrollbar1">
                 <div class="account2">
-                    <div class="image img-cir img-120">
-                        <img src="<?= base_url('assets/images/icon/avatar-big-01.jpg')?>" alt="John Doe" />
-                    </div>
                     <h4 class="name">john doe</h4>
                     <a href="#">Sign out</a>
                 </div>
@@ -169,9 +167,6 @@
                 </div>
                 <div class="menu-sidebar2__content js-scrollbar2">
                     <div class="account2">
-                        <div class="image img-cir img-120">
-                            <img src="<?= base_url('assets/images/icon/avatar-big-01.jpg')?>" alt="John Doe" />
-                        </div>
                         <h4 class="name">john doe</h4>
                         <a href="#">Sign out</a>
                     </div>
@@ -223,20 +218,57 @@
             
             <!-- CONTENT -->
             <section class="mt-sm-3 mt-md-5 mt-lg-5 mt-xl-5 pt-lg-5 pt-xl-5">
-                <div class="d-flex flex-row border rounded mb-2 mx-auto col-md-10 p-0">
-                    <img class="img-fluid event-img" src="<?= base_url('assets/images/evento-default.jpg') ?>">
-                    <div class="p-3 w-100">
-                        <div class="d-flex flex-row w-100 justify-content-between">
-                            <h3>Evento legal que vai existir aqui</h3>
+                <div class="border rounded mb-3 mx-auto col-md-10 p-0">
+                    <img class="" src="<?= base_url('assets/images/evento-default-2.jpg') ?>">
+                    <div class="p-3 w-100 bg-light">
+                        <div class="d-flex flex-row flex-wrap mb-2 w-100 justify-content-between">
+                            <div>
+                                <h3>Evento legal que vai existir aqui</h3>
+                                <span>dd/mm/yyyy</span>
+                            </div>
                             <div class="">
                                 <a href="#" class=""><i class="fas fa-pencil-alt"></i></a>
-                                <a href="#" class=""><i class="fas fa-trash-alt"></i></a>
+                                <a href="#" class="text-danger ml-3"><i class="fas fa-trash-alt"></i></a>
                             </div>
                         </div>
-                        <span>dd/mm/yyyy</span>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras turpis diam, finibus ut mi et, maximus pharetra leo. Etiam eu lacinia mi, id pretium purus. Vivamus lacinia metus vitae urna iaculis porta. Vestibulum eu venenatis magna, facilisis porttitor eros. Mauris lobortis turpis felis. Nunc id pharetra metus. Nulla blandit lorem ut elit convallis, nec venenatis mauris ultricies.</p>
+                        <p class="text-truncate col-md-12">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras turpis diam, finibus ut mi et, maximus pharetra leo. Etiam eu lacinia mi, id pretium purus. Vivamus lacinia metus vitae urna iaculis porta. Vestibulum eu venenatis magna, facilisis porttitor eros. Mauris lobortis turpis felis. Nunc id pharetra metus. Nulla blandit lorem ut elit convallis, nec venenatis mauris ultricies.</p>
                     </div>
                 </div>
+                <div class="border rounded mb-3 mx-auto col-md-10 p-0">
+                    <img class="" src="<?= base_url('assets/images/evento-default-2.jpg') ?>">
+                    <div class="p-3 w-100 bg-light">
+                        <div class="d-flex flex-row flex-wrap mb-2 w-100 justify-content-between">
+                            <div>
+                                <h3>Evento legal que vai existir aqui</h3>
+                                <span>dd/mm/yyyy</span>
+                            </div>
+                            <div class="">
+                                <a href="#" class=""><i class="fas fa-pencil-alt"></i></a>
+                                <a href="#" class="text-danger ml-3"><i class="fas fa-trash-alt"></i></a>
+                            </div>
+                        </div>
+                        <p class="text-truncate col-md-12">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras turpis diam, finibus ut mi et, maximus pharetra leo. Etiam eu lacinia mi, id pretium purus. Vivamus lacinia metus vitae urna iaculis porta. Vestibulum eu venenatis magna, facilisis porttitor eros. Mauris lobortis turpis felis. Nunc id pharetra metus. Nulla blandit lorem ut elit convallis, nec venenatis mauris ultricies.</p>
+                    </div>
+                </div>
+                <div class="border rounded mb-3 mx-auto col-md-10 p-0">
+                    <img class="" src="<?= base_url('assets/images/evento-default-2.jpg') ?>">
+                    <div class="p-3 w-100 bg-light">
+                        <div class="d-flex flex-row flex-wrap mb-2 w-100 justify-content-between">
+                            <div>
+                                <h3>Evento legal que vai existir aqui</h3>
+                                <span>dd/mm/yyyy</span>
+                            </div>
+                            <div class="">
+                                <a href="#" class=""><i class="fas fa-pencil-alt"></i></a>
+                                <a href="#" class="text-danger ml-3"><i class="fas fa-trash-alt"></i></a>
+                            </div>
+                        </div>
+                        <p class="text-truncate col-md-12">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras turpis diam, finibus ut mi et, maximus pharetra leo. Etiam eu lacinia mi, id pretium purus. Vivamus lacinia metus vitae urna iaculis porta. Vestibulum eu venenatis magna, facilisis porttitor eros. Mauris lobortis turpis felis. Nunc id pharetra metus. Nulla blandit lorem ut elit convallis, nec venenatis mauris ultricies.</p>
+                    </div>
+                </div>
+                <a href="#" class="btn-lg btn-primary border-0 rounded-circle" style="position: fixed; bottom: 8vmin; right: 8vmin; z-index:1;" data-toggle="tooltip" data-placement="top" title="Novo cachorro">
+                        <i class="fa fa-plus"></i>
+                    </a>
             </section>
 
             <section>
